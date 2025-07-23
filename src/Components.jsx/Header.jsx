@@ -14,7 +14,7 @@ function Header() {
 
   const [menu,setMenu] = useState(false);
   return (
-    <header className="bg-transparent flex  justify-between fixed w-full items-center">
+    <header className="z-10 bg-transparent flex  justify-between fixed w-full items-center select-none">
       <div className="flex space-x-2 items-center ">
         <img className="bg-transparent rounded-none w-16 h-18 ml-4 mt-4 " src={datos.header.logo} alt="Mapa de Colombia" />
         <h1 className="font-bold font-mono text-2xl text-white ">{datos.header.titulo}</h1>

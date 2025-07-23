@@ -5,9 +5,9 @@ import Cards from "./Cards.jsx";
 
 function App() {
   return (
-    <div>
+    <div >
       <Header />
-      <main className="overflow:hidden">
+      <main className="overflow-hidden ">
         <TopicProvider>
           <Background/>
           <Cards/>

@@ -57,7 +57,7 @@ const datos = {
     },
     {
       imagen: "/React-Landing/public/imagenes/choco.webp",
-      titulo: "Choco",
+      titulo: "Chocó",
       descripcion:
         "Alberga selvas tropicales vírgenes, manglares, ríos cristalinos y una abundante vida silvestre.",
       subtitulo: "Avistamiento de ballenas",
@@ -70,7 +70,7 @@ const datos = {
       subtitulo: "'Puerta de oro de Colombia'",
     },
     {
-      imagen: "/React-Landing/public/imagenes/san andres.webp",
+      imagen: "/React-Landing/public/imagenes/sanandres.webp",
       titulo: "San Andrés",
       descripcion:
         "Islas paradisíacas con mar multicolor, perfectas para buceo, snorkel y descanso.",

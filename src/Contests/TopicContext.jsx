@@ -1,77 +1,136 @@
-import { createContext,useContext, useState } from "react"
-import datos from "../data/info.js"
+import { createContext, useContext, useState } from "react";
+import datos from "../data/info.js";
+import { useReducer } from "react";
 
 const TopicContext = createContext();
 
 const topics = datos.destinos;
 
+function TopicProvider({ children }) {
+  const [currentTopic, setCurrentTopic] = useState(0);
+  const [disableButton, setDisableButton] = useState(false);
+  const [backgroundAnimate, setBackgroundAnimate] = useState("");
 
-function TopicProvider({children}) {
+  const estiloInicial = {
+    suave: 0,
+    abrupto: 0,
+  };
 
-    const [currentTopic,setCurrentTopic]= useState(0);
-    const [disableButton,setDisableButton] = useState(false);
-    const [backgroundAnimate,setBackgroundAnimate] = useState("");
+  const funcionMover = (estiloActual, moverHacia) => {
+
+    let {suave,abrupto} = estiloActual
+
+    if(moverHacia == 'izquierda'){
+
+      if(suave % topics.length == 0 || suave == 0){
+        abrupto = suave + topics.length
+      }
+      suave ++
+    }
+
+    if (moverHacia == 'derecha'){
+
+
+      
+      if(suave % topics.length == 0){
+        abrupto = suave
+      }
+      
+      suave--
+
+    }
+
+    const nuevoEstilo = {suave,abrupto};
+
+    return nuevoEstilo
+
     
-   
+  };
 
-    const nextTopic = ()=>{
-        setDisableButton(true);
-        setBackgroundAnimate("animate-downgrade");
+  const [estilo, moverA] = useReducer(funcionMover, estiloInicial);
 
-        setTimeout(() => {
-            if(currentTopic >= topics.length - 1){
-                  setCurrentTopic(0);
-            }else{
-                setCurrentTopic(currentTopic + 1)
-            }
-            setTimeout(() => {
-                setBackgroundAnimate("");
-                 setDisableButton(false);
-            }, 100);
-        }, 900);
+  const nextTopic = () => {
+    setDisableButton(true);
+    setBackgroundAnimate("animate-downgrade");
+
+    setTimeout(() => {
+      if (currentTopic >= topics.length - 1) {
+        setCurrentTopic(0);
+      } else {
+        setCurrentTopic(currentTopic + 1);
+      }
+      setTimeout(() => {
+        setBackgroundAnimate("");
+        setDisableButton(false);
+      }, 100);
+    }, 900);
+  };
+
+  const prevTopic = () => {
+    setDisableButton(true);
+    setBackgroundAnimate("animate-upgrade");
+
+    if (currentTopic == 0) {
+      setCurrentTopic(topics.length - 1);
+    } else {
+      setCurrentTopic(currentTopic - 1);
     }
-
-    const prevTopic = ()=>{
-           setDisableButton(true);
-           setBackgroundAnimate("animate-upgrade");
-
-        if(currentTopic == 0){
-          setCurrentTopic(topics.length - 1)
-        }else{
-            setCurrentTopic(currentTopic - 1)
-        }
-        setTimeout(() => {
-            setBackgroundAnimate("");
-            setDisableButton(false);
-        }, 1000);
-    }
+    setTimeout(() => {
+      setBackgroundAnimate("");
+      setDisableButton(false);
+    }, 1000);
+  };
 
   return (
-    <TopicContext.Provider value={{topics,currentTopic,nextTopic,prevTopic,backgroundAnimate}}>
-         {/* div para los botones */}
-      <div className='flex w-full justify-center bottom-10 fixed space-x-10'> 
-        <button disabled={disableButton} className='ring-2 ring-white rounded-full size-10 flex justify-center items-center' type='button' onClick={prevTopic}>
-          <img className='size-6 hover:size-7 transition-[1s]  hover:invert' src="/React-Landing/public/icons/caret-left-fill.svg" alt="left arrow" />
+    <TopicContext.Provider
+      value={{ topics, currentTopic, nextTopic, prevTopic, backgroundAnimate,estilo }}
+    >
+      {/* div para los botones */}
+      <div className="z-10  flex w-full justify-center bottom-10 fixed space-x-10">
+        <button
+          disabled={disableButton}
+          className="ring-2 ring-white rounded-full size-10 flex justify-center items-center"
+          type="button"
+          onClick={() => {
+                     prevTopic();
+                     moverA('izquierda');
+                   }}
+        >
+          <img
+            className="size-6 hover:size-7 transition-[1s]  hover:invert"
+            src="/React-Landing/public/icons/caret-left-fill.svg"
+            alt="left arrow"
+          />
         </button>
-        <button disabled={disableButton} className='ring-2 ring-white rounded-full size-10 flex justify-center items-center' type='button' onClick={nextTopic}>
-          <img className='size-6 hover:size-7 transition-[1s]  hover:invert' src="/React-Landing/public/icons/caret-right-fill.svg " alt="right arrow" />
+        <button
+          disabled={disableButton}
+          className=" ring-2 ring-white rounded-full size-10 flex justify-center items-center"
+          type="button"
+          onClick={() => {
+                     nextTopic();
+                     moverA('derecha');
+                   }}
+        >
+          <img
+            className="size-6 hover:size-7 transition-[1s]  hover:invert"
+            src="/React-Landing/public/icons/caret-right-fill.svg "
+            alt="right arrow"
+          />
         </button>
       </div>
-        {children}
+      {children}
     </TopicContext.Provider>
   );
 }
 
-
-
-export function useTopic(){
-    const context = useContext(TopicContext);
-    if(!context){ 
-        throw new Error ("Para usar useTopic, debe estar dentro de TopicProvider");
-    }
-    return context;
+export function useTopic() {
+  const context = useContext(TopicContext);
+  if (!context) {
+    throw new Error("Para usar useTopic, debe estar dentro de TopicProvider");
+  }
+  return context;
 }
 
-
-
 export default TopicProvider;
+
+
