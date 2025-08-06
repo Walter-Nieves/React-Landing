@@ -1,35 +1,125 @@
 const datos = {
   header: {
-    logo: "/React-Landing/public/imagenes/Mapa5.webp",
+    logo: "/React-Landing/public/imagenes/gif-colombia.gif",
     titulo: "Viaja por Colombia",
     link: "#",
     nav: [
       {
         nombre: "Inicio",
-        link: "#",
+        link: "/",
       },
       {
         nombre: "Nosotros",
-        link: "#",
+        link: "/nosotros",
       },
       {
-        nombre: "Paquetes",
-        link: "#",
-      },
-      {
-        nombre: "Hotel",
-        link: "#",
+        nombre: "Destinos",
+        link: "/destinos",
+        subNav: [
+          {
+            nombre: "Insular",
+            link: "/insular",
+            subMenu: [
+              { 
+                 nombre: "San Andrés",
+                 link: "/san-andres"
+              },
+              { 
+                 nombre: "Islas del Rosario",
+                 link: "/rosario"
+              },
+            ],
+          },
+          {
+            nombre: "Amazonía",
+            link: "/amazonia",
+            subMenu: [
+              { 
+                 nombre: "Amazonas",
+                 link: "/amazonas"
+              },
+            ],
+          },
+          {
+            nombre: "Andina",
+            link: "/andina",
+            subMenu: [
+              { 
+                 nombre: "Cali",
+                 link: "/cali"
+              },
+              { 
+                 nombre: "Bogotá",
+                 link: "/bogota"
+              },
+              { 
+                 nombre: "Santander",
+                 link: "/santander"
+              },
+              { 
+                 nombre: "Eje cafetero",
+                 link: "/eje-cafetero"
+              },
+              { 
+                 nombre: "Nevado Santa Isabel",
+                 link: "/nevado-santa-isabel"
+              },
+            ],
+          },
+          {
+            nombre: "Orinoquía",
+            link: "/orinoquia",
+             subMenu: [
+              { 
+                 nombre: "Caño Cristales",
+                 link: "/cano-cristales"
+              },
+            ],
+          },
+          {
+            nombre: "Caribe",
+            link: "/caribe",
+            subMenu: [
+              { 
+                 nombre: "Barranquilla",
+                 link: "/barranquilla"
+              },
+              { 
+                 nombre: "Cartagena",
+                 link: "/cartagena"
+              },
+              { 
+                 nombre: "Santa Marta",
+                 link: "/santa-marta"
+              },
+              { 
+                 nombre: "Guajira",
+                 link: "/guajira"
+              },
+            ],
+          },
+          {
+            nombre: "Pacífico",
+            link: "/pacifico",
+            subMenu: [
+              { 
+                 nombre: "Chocó",
+                 link: "/choco"
+              },
+            ],
+          },
+        ],
       },
       {
         nombre: "Contacto",
-        link: "#",
+        link: "/contacto",
       },
     ],
   },
   destinos: [
     {
       imagen: "/React-Landing/public/imagenes/Bogota.webp",
-      titulo: "Bogota",
+      titulo: "Bogotá",
       descripcion:
         "Mezcla de historia y modernidad, se destacan la Candelaria, el Museo del Oro y Monserrate, con vistas increíbles.",
       subtitulo: "Nuestra hermosa capital",
@@ -40,13 +130,6 @@ const datos = {
       descripcion:
         "Es reconocida por su rica historia colonial, su arquitectura conservada y su papel clave durante la época de la colonización española.",
       subtitulo: "Excelentes playas, cultura vibrante y vida nocturna",
-    },
-     {
-      imagen: "/React-Landing/public/imagenes/amazonas.webp",
-      titulo: "Amazonas",
-      descripcion:
-        "Actividades como avistamiento de delfines rosados, senderismo en la selva, y visitas a comunidades indígenas. También permite explorar la triple frontera con Perú y Brasil.",
-      subtitulo: "Leticia, ideal para el ecoturismo,",
     },
     {
       imagen: "/React-Landing/public/imagenes/Cali.webp",
@@ -68,6 +151,13 @@ const datos = {
       descripcion:
         "Cuna del Carnaval más famoso del país, cultura caribeña, historia y modernidad bañados por el río Magdalena y el océano atlántico. ",
       subtitulo: "'Puerta de oro de Colombia'",
+    },
+    {
+      imagen: "/React-Landing/public/imagenes/amazonas.webp",
+      titulo: "Amazonas",
+      descripcion:
+        "Actividades como avistamiento de delfines rosados, senderismo en la selva, y visitas a comunidades indígenas. También permite explorar la triple frontera con Perú y Brasil.",
+      subtitulo: "Leticia, ideal para el ecoturismo",
     },
     {
       imagen: "/React-Landing/public/imagenes/sanandres.webp",
@@ -125,7 +215,6 @@ const datos = {
         "Forma parte del Parque Nacional Natural Los Nevados, hogar de frailejones, cóndores, venados y otras especies únicas del ecosistema de páramo.",
       subtitulo: "El ascenso es accesible para principiantes.",
     },
-   
   ],
 };
 
