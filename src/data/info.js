@@ -17,30 +17,6 @@ const datos = {
         link: "/destinos",
         subNav: [
           {
-            nombre: "Insular",
-            link: "/insular",
-            subMenu: [
-              { 
-                 nombre: "San Andrés",
-                 link: "/san-andres"
-              },
-              { 
-                 nombre: "Islas del Rosario",
-                 link: "/rosario"
-              },
-            ],
-          },
-          {
-            nombre: "Amazonía",
-            link: "/amazonia",
-            subMenu: [
-              { 
-                 nombre: "Amazonas",
-                 link: "/amazonas"
-              },
-            ],
-          },
-          {
             nombre: "Andina",
             link: "/andina",
             subMenu: [
@@ -66,17 +42,7 @@ const datos = {
               },
             ],
           },
-          {
-            nombre: "Orinoquía",
-            link: "/orinoquia",
-             subMenu: [
-              { 
-                 nombre: "Caño Cristales",
-                 link: "/cano-cristales"
-              },
-            ],
-          },
-          {
+           {
             nombre: "Caribe",
             link: "/caribe",
             subMenu: [
@@ -98,6 +64,42 @@ const datos = {
               },
             ],
           },
+          {
+            nombre: "Insular",
+            link: "/insular",
+            subMenu: [
+              { 
+                 nombre: "San Andrés",
+                 link: "/san-andres"
+              },
+              { 
+                 nombre: "Islas del Rosario",
+                 link: "/rosario"
+              },
+            ],
+          },
+          {
+            nombre: "Amazonía",
+            link: "/amazonia",
+            subMenu: [
+              { 
+                 nombre: "Amazonas",
+                 link: "/amazonas"
+              },
+            ],
+          },
+          
+          {
+            nombre: "Orinoquía",
+            link: "/orinoquia",
+             subMenu: [
+              { 
+                 nombre: "Caño Cristales",
+                 link: "/cano-cristales"
+              },
+            ],
+          },
+         
           {
             nombre: "Pacífico",
             link: "/pacifico",
@@ -219,3 +221,6 @@ const datos = {
 };
 
 export default datos;
+
+
+

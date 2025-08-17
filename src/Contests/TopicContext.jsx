@@ -8,12 +8,14 @@ const topics = datos.destinos;
 
 function TopicProvider({ children }) {
   const [currentTopic, setCurrentTopic] = useState(0);
+  const [currentCardTopic, setCurrentCardTopic] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
   const [backgroundAnimate, setBackgroundAnimate] = useState("");
   const [growCardAnimate, setGrowCardAnimate] = useState();
   const [appearAnimate, setAppearAnimate] = useState("animate-infoAppear");
   const [disappearAnimate,setDisappearAnimate] = useState("");
-  // const [change, setChange] = useState(false);
+  // const [menu, setMenu] = useState(false);
+
 
   const estiloInicial = {
     suave: 0,
@@ -46,16 +48,20 @@ function TopicProvider({ children }) {
   const [estilo, moverA] = useReducer(funcionMover, estiloInicial);
 
   const nextTopic = () => {
-    // setChange(true);
-    setBackgroundAnimate("animate-downgrade");
+   
     setGrowCardAnimate("animate-downGrowCard");
-  
+    setBackgroundAnimate("animate-downgrade");
     setTimeout(() => {
       setAppearAnimate("animate-infoAppear");
-    }, 1200);
+      
+    }, 1100);
     setDisableButton(true);
  
-
+      if (currentCardTopic >= topics.length - 1) {
+        setCurrentCardTopic(0)
+      } else {
+        setCurrentCardTopic(currentCardTopic + 1)
+      }
 
     setTimeout(() => {
       if (currentTopic >= topics.length - 1) {
@@ -68,23 +74,19 @@ function TopicProvider({ children }) {
       setGrowCardAnimate("");
       setAppearAnimate("");
       setDisableButton(false);
-      // setChange(false);
+     
     }, 1000);
     
   };
 
   const prevTopic = () => {
 
-    setBackgroundAnimate("animate-upgrade");
-    setGrowCardAnimate("animate-upGrowCard");
-    
-    setDisappearAnimate("animate-infoDisappear");
     setDisableButton(true);
 
+    setGrowCardAnimate("animate-upGrowCard"); 
+    setBackgroundAnimate("animate-upgrade");
 
-    
-    // setTimeout(() => {
-    // }, 1200);
+    setDisappearAnimate("animate-infoDisappear");
     
     if (currentTopic == 0) {
       setCurrentTopic(topics.length - 1);
@@ -92,27 +94,19 @@ function TopicProvider({ children }) {
       setCurrentTopic(currentTopic - 1);
     }
     setTimeout(() => {
-      setBackgroundAnimate("");
-      setGrowCardAnimate("");
-      setDisappearAnimate("");
+
+      if (currentCardTopic == 0) {
+      setCurrentCardTopic(topics.length - 1);
+    } else {
+      setCurrentCardTopic(currentCardTopic - 1);
+    }
+
       setDisableButton(false);
+      setDisappearAnimate("");
+      setGrowCardAnimate("");
+      setBackgroundAnimate("");
     }, 1000);
   };
-
-  // useEffect(() => {
-
-  //     if (change) {
-  //       setAppearAnimate("animate-infoAppear");
-  
-  //       const timeout = setTimeout(() => {
-  //       setChange(false);
-  //     }, 100);
-  
-  //     return () => clearTimeout(timeout);
-    
-  //     }
-
-  // }, [change]);
 
 
   return (
@@ -126,8 +120,10 @@ function TopicProvider({ children }) {
         estilo,
         growCardAnimate,
         appearAnimate,
-        disappearAnimate
-        // setChange
+        disappearAnimate,
+        currentCardTopic,
+        // setMenu,
+        // menu
       }}
     >
       {/* div para los botones */}

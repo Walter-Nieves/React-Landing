@@ -22,10 +22,10 @@ function Cards() {
 
   return (
     //div principal
-    <div className="pl-2 left-[40%] overflow-hidden flex fixed z-30  top-0  w-screen h-screen items-center "> 
+    <div className="pl-2 left-[40%] max-tablet:left-[35%] max-sm:left-[30%] max-xs:left-[25%] overflow-hidden flex fixed z-30  top-0  w-screen h-screen items-center"> 
       {/* //lista */}
       <ul
-        className=" flex space-x-16 relative"
+        className="flex space-x-16 relative"
         style={{
           //corresponde al ancho de la tarjeta (w-60) mas el espacio de gap(space-x-16) = 19rem
           transform: `translateX(${(estilo.suave-1) * 19}rem)`,

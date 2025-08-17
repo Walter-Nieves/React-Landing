@@ -2,28 +2,29 @@ import { useEffect, useState } from "react";
 import { useTopic } from "../Contests/TopicContext";
 
 function GrowCard() {
-  const { topics, currentTopic,growCardAnimate } = useTopic();
+  const { topics, currentCardTopic,growCardAnimate } = useTopic();
 
-  const [posicion,setPosicion] = useState(currentTopic)
+  const [posicion,setPosicion] = useState(currentCardTopic)
 
   useEffect(()=>{
-    if(currentTopic < topics.length - 1 ){
-      setPosicion(currentTopic + 1)
-    }else{
-      setPosicion(0)
-    }
-
-  },[currentTopic, topics.length]);
+    setPosicion(currentCardTopic)
+    // if(currentCardTopic < topics.length ){
+    // }else{
+    //   setPosicion(0)
+    // }
+  },[currentCardTopic, topics.length]);
 
   return (
     <div className="z-20 fixed w-screen h-screen left-0 top-0  flex items-center">
-      <div
+      <div 
         style={{
+          // "--delay-anim2":"0.5s",
           backgroundImage: `url(${topics[posicion].imagen}`,
           backgroundPosition: "center",
           backgroundSize: "cover",
-          left:"calc(40% + 0.5rem)"
-        }}className={`pl-2 w-60 aspect-[3/4] rounded-md overflow-hidden absolute rounded-xl
+          // left:"calc(40% + 0.5rem)"
+          left:"var(--longitud)"
+        }} className={`pl-2 w-60 aspect-[3/4]  overflow-hidden absolute rounded-xl
          transition-all duration-500 ease-in-out   ${growCardAnimate} `}
 
         // className="pl-2 w-60 aspect-[3/4] rounded-md overflow-hidden absolute left-[41.5%] "
