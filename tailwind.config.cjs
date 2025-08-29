@@ -17,7 +17,7 @@ module.exports = {
         upGrowCard: "upGrowCard 1s ease-in-out",
         infoAppear: "infoAppear 1s forwards var(--delay-anim)",
         infoDisappear: "infoDisappear 1s",
-        // transparent: "transparent 0.5s",
+        movement:"movement 6s linear infinite"
       },
       keyframes: {
         downgrade: {
@@ -88,11 +88,20 @@ module.exports = {
              display: "flex",
           },
         },
+        movement:{
+         "0%":{
+          transform: "translateX(0%)",
+         },
+         "100%":{
+          transform: "translateX(-400%)",
+         }
+        },
       },
     },
   },
   plugins: [],
 };
+
 
 
 

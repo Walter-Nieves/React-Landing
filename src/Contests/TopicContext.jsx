@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import datos from "../data/info.js";
+import datos from "../data/info.jsx";
 import { useReducer } from "react";
 
 const TopicContext = createContext();
@@ -14,9 +14,9 @@ function TopicProvider({ children }) {
   const [growCardAnimate, setGrowCardAnimate] = useState();
   const [appearAnimate, setAppearAnimate] = useState("animate-infoAppear");
   const [disappearAnimate,setDisappearAnimate] = useState("");
-  // const [menu, setMenu] = useState(false);
+  
 
-
+  //reducer para estilos
   const estiloInicial = {
     suave: 0,
     abrupto: 0,
@@ -47,6 +47,8 @@ function TopicProvider({ children }) {
 
   const [estilo, moverA] = useReducer(funcionMover, estiloInicial);
 
+
+  //funciones para moverse
   const nextTopic = () => {
    
     setGrowCardAnimate("animate-downGrowCard");
@@ -122,43 +124,10 @@ function TopicProvider({ children }) {
         appearAnimate,
         disappearAnimate,
         currentCardTopic,
-        // setMenu,
-        // menu
+        disableButton,
+        moverA,
       }}
     >
-      {/* div para los botones */}
-      <div className=" flex w-full justify-center bottom-10 fixed z-50 space-x-10">
-        <button
-          disabled={disableButton}
-          className="ring-2 ring-white rounded-full size-10 flex justify-center items-center"
-          type="button"
-          onClick={() => {
-            prevTopic();
-            moverA("izquierda");
-          }}
-        >
-          <img
-            className="size-6 hover:size-7 transition-[1s]  hover:invert"
-            src="/React-Landing/public/icons/caret-left-fill.svg"
-            alt="left arrow"
-          />
-        </button>
-        <button
-          disabled={disableButton}
-          className=" ring-2 ring-white rounded-full size-10 flex justify-center items-center"
-          type="button"
-          onClick={() => {
-            nextTopic();
-            moverA("derecha");
-          }}
-        >
-          <img
-            className="size-6 hover:size-7 transition-[1s]  hover:invert"
-            src="/React-Landing/public/icons/caret-right-fill.svg "
-            alt="right arrow"
-          />
-        </button>
-      </div>
       {children}
     </TopicContext.Provider>
   );

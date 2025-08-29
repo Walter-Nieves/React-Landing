@@ -5,6 +5,10 @@
 /* para utilizar las clases de tailwind  */
 @tailwind utilities;
 
+:root{
+  width:100vw;
+}
+
 @layer base {
   html {
     font-size: 16px;

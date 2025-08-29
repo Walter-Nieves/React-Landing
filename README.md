@@ -1,206 +1,150 @@
-# Comandos del proyecto
+# 🌿 React-Landing – Ecoturismo en Colombia  
 
-Comandos empleados para la creación y gestión del proyecto
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)  
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.3-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)  
+[![Vite](https://img.shields.io/badge/Vite-4.0-646CFF?style=for-the-badge&logo=vite&logoColor=yellow)](https://vitejs.dev/)  
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)  
+[![Estado](https://img.shields.io/badge/Estado-Terminado-brightgreen?style=for-the-badge)]()  
 
-## Creacion
+Un sitio web dinámico y totalmente responsive para una empresa de **ecoturismo en Colombia**, construido con **React + Vite + Tailwind CSS**.  
+El proyecto busca modernizar la forma en que se muestran los destinos turísticos del país, ofreciendo una experiencia visual atractiva y fácil de usar.  
 
-Crear proyecto de React:
+---
 
-     npm create vite@latest React-Landing
+## ✨ Características principales  
 
-Descargar Tailwind 3:
+- 🎨 **Diseño dinámico e interactivo**: tarjetas animadas que cambian de tamaño y se desplazan según el botón seleccionado.  
+- 🌍 **Explora Colombia**: acceso a las **6 regiones del país**, cada una con destinos turísticos propios.  
+- 🏢 **Sección "Nosotros"**: información de la empresa y su misión.  
+- 📩 **Formulario de contacto seguro**: validaciones contra ataques y mal uso.  
+- 📂 **Contenido totalmente dinámico**: toda la información proviene de un único archivo `info.jsx`.  
+- 📱 **Responsive Design**: adaptado a cualquier dispositivo.  
+- 🖼 **Optimización de recursos**: imágenes convertidas a formato `.webp`.  
+- 🦶 **Footer global**: presente en todas las páginas excepto en la de inicio.  
 
-    npm i -D tailwindcss@3 postcss autoprefixer
+---
 
-Descargar GitHub pages:
+## 🚀 Estado del proyecto  
 
-    npm i -D gh-pages
+✅ **Terminado** – listo para despliegue en **GitHub Pages**.  
 
-Descargar enrutador:
+---
 
-    npm i react-router-dom
+## 🛠️ Requisitos previos  
 
-Descargar formulario de React:
+Antes de ejecutar este proyecto necesitas tener instalado:  
 
-    npm  i react-hook-form
+- [Node.js](https://nodejs.org/) (>= 16)  
+- npm (incluido con Node.js)  
 
-## Estructura de carpetas
+Dependencias principales:  
 
-Aqui se describe como se  estructura normalmente un proyecto de React:
+- `react` + `react-dom`  
+- `react-router-dom`  
+- `tailwindcss@3`  
+- `react-hook-form`  
+- `gh-pages`  
 
-    📁nombre-del-proyecto
-     ├📁public
-     ├📁src
-     | ├📁Components
-     | ├📁Contexts
-     | ├📄App.jsx
-     | ├📄index.css
-     | └📄main.jsx
-     ├📄.gitignore
-     ├📁node_modules
-     ├📄eslint.config.js
-     ├📄index.html
-     ├📄package.json
-     ├📄postcss.config.js
-     ├📄README.md
-     ├📄tailwind.config.js
-     └📄vite.config.js
+---
 
-## Configuración de entorno
+## ⚡ Instalación y ejecución  
 
-Tailwind:
+Clonar el repositorio:  
 
-    npx tailwindcss init -p
+```bash
+git clone https://github.com/<<<<< TU_USUARIO_DE_GITHUB >>>>>/React-Landing.git
+cd React-Landing
 
-## Contenido de archivos importantes 
-`vite.config.js`:
+Instalar dependencias:
 
-     import { defineConfig } from 'vite'
-     import react from '@vitejs/plugin-react'
-
-     // https://vite.dev/config/
-     export default defineConfig({
-       plugins: [react()],
-       base:"/React-Landing/"
-     })
+npm install
 
 
-`tailwind.config.js`:
+Iniciar en modo desarrollo:
 
-    /** @type {import('tailwindcss').Config} */
-    module.exports = {
-      content: [
-        "./src/**/*.{js,jsx,ts,tsx}"
-      ],
-      theme: {
-        extend: {
-          screens:{
-              md:'780px'
-          },
-          animation:{
-            downgrade:"downgrade 1s ease-in-out",
-            upgrade:"downgrade 1s ease-in-out reverse"
-          },
-          keyframes:{
-            downgrade:{
-              from:{
-                opacity:1,
-                transform: "scale(1)"
-              },
-              to:{
-                opacity:0,
-                transform: "scale(2)"
-              }
-            }
-    
-          }
-        },
+npm run dev
+
+
+Construir versión para producción:
+
+npm run build
+
+
+Desplegar en GitHub Pages:
+
+npm run deploy
+
+📂 Estructura de carpetas
+📁 React-Landing
+ ├📁 public/         # Archivos estáticos (imágenes, íconos, etc.)
+ ├📁 src/            # Código fuente
+ │ ├📁 Components/   # Componentes reutilizables
+ │ ├📁 Contexts/     # Contextos de React (estado global)
+ │ ├📄 App.jsx       # Componente raíz
+ │ ├📄 index.css     # Estilos globales
+ │ └📄 main.jsx      # Punto de entrada
+ ├📄 vite.config.js  # Configuración de Vite
+ ├📄 tailwind.config.js # Configuración de Tailwind
+ ├📄 package.json    # Dependencias y scripts
+ └📄 README.md       # Documentación
+
+⚙️ Configuración de entorno
+vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: "/React-Landing/",
+})
+
+tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      screens: {
+        xs: "345px",
+        sm: "430px",
+        md: "780px",
+        tablet: "1220px",
+        xl: "1400px"
       },
-      plugins: [],
-    }
-
-`index.css`:
-
-    /* para resetear los estilos  */
-    @tailwind base;
-    /*  para utilizar los componentes */
-    @tailwind components;
-    /* para utilizar las clases de tailwind  */
-    @tailwind utilities;
-
-
-`package.json > scripts`:
-
-     "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+      animation: {
+        downgrade: "downgrade 1s ease-in-out",
+        upgrade: "downgrade 1s ease-in-out reverse",
+        downGrowCard: "downGrowCard 1s ease-in-out",
+        upGrowCard: "upGrowCard 1s ease-in-out",
+        infoAppear: "infoAppear 1s forwards var(--delay-anim)",
+        infoDisappear: "infoDisappear 1s",
+        movement:"movement 6s linear infinite"
+      }
+    },
   },
+  plugins: [],
+}
 
- ## Subir proyecto a GitHub
+🌿 Inspiración
+<img src="public/imagenes/sanandres2.webp" alt="Inspiracion" width="500">
 
- Crear repositorio local :
+Este proyecto nació de la necesidad de mejorar las páginas de turismo en Colombia, que suelen ser sencillas y poco atractivas.
+Mi objetivo es que alguna empresa del sector vea el potencial y pueda convertirse en una oportunidad laboral.
 
-    git init
+📬 Contacto
 
+📧 Correo: <<<<< nievesarrietawalter@gmail.com >>>>>
+🌐 GitHub: [<<<<< Walter Nieves >>>>>](https://github.com/
+<<<<< Walter Nieves >>>>>)
 
-Configurar repositorio :
+⭐ Apoya este proyecto
 
-   git config user.name "Tu-nombre"
-   git config user.email "correo de tu cuenta de GitHub"
-   git remote add origin https://github.com/enlace-a-tu-repositorio-remoto-git
+Si te gustó este proyecto, por favor considera:
 
+Darle una ⭐ en GitHub
 
-Guardar cambios:
+Compartirlo con otros
 
-   git add . 
-   git commit -m "Que cambio hiciste"
-   git push -u origin master
-
-
-Guardar cambios despues de `git push -u origin master`
-
-   git add . 
-   git commit -m "Que cambio hiciste"
-   git push 
-
-
-## Viajar entre ramas
-
-Crear nueva rama:
-
-   git checkout -b nombre-de-la-nueva-rama
-
-Ir a una rama:
-
-   git checkout  nombre-de-la-nueva-rama
-
-Listar commits realizados :
-
-   git log --online
-
-Volver a un commit, donde el codigo `hash` del commit es `abc123`:
-
-    git checkout abc123
-
-
-Volver al commit principal (normalmente `master` o `main`):
-
-    git checkout nombre-de-la-rama
-
-
-Traer cambios realizados por otra persona en el repositorio remoto:
-
-   git pull origin nombre-de-la-rama-actualizar
-
-
-Combinar cambios de una rama a otra:
-
-    #Traer cambios de la rama `master` a la rama `pablo`
-
-    git checkout pablo
-    git merge master
-
-    #Traer cambios de la rama `pablo` a la rama `master`
-
-    git checkout master
-    git merge pablo
-
-
-Dejar mensaje de fusión:
-
-    git merge rama -m "Mensaje para cuando se fusionan ramas"
-
-## Inspiracion🌈
-
-<img src="public/imagenes/sanandres2.webp" alt="Inspiracion" width="400">
-
-Más informacion en:
-
-[Buscar Google](https://chatgpt.com)
+Dejarme tu feedback
 
 
 

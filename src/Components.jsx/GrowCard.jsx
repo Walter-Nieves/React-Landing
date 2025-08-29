@@ -15,7 +15,7 @@ function GrowCard() {
   },[currentCardTopic, topics.length]);
 
   return (
-    <div className="z-20 fixed w-screen h-screen left-0 top-0  flex items-center">
+    <div className="z-10 fixed w-screen h-screen left-0 top-0  flex items-center">
       <div 
         style={{
           // "--delay-anim2":"0.5s",

@@ -22,7 +22,7 @@ function Cards() {
 
   return (
     //div principal
-    <div className="pl-2 left-[40%] max-tablet:left-[35%] max-sm:left-[30%] max-xs:left-[25%] overflow-hidden flex fixed z-30  top-0  w-screen h-screen items-center"> 
+    <div className="pl-2 left-[40%] max-tablet:left-[35%] max-sm:left-[30%] max-xs:left-[25%] overflow-hidden flex fixed z-20  top-0  w-screen h-screen items-center"> 
       {/* //lista */}
       <ul
         className="flex space-x-16 relative"
