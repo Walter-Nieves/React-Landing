@@ -53,6 +53,7 @@ function Destino() {
         <div className="w-[100%] h-full bg-gray-300 flex flex-col justify-center items-center">
           <h2  className=" text-7xl text-center mb-20 mt-28  text-green-500">{region.titulo}</h2>
           <p className="text-3xl w-[84%] my-10 text-justify justify-center">{region.parrafo1}</p>
+          <div className="left-"></div>
 
           <img
             className="object-contain w-[84%] rounded-xl"

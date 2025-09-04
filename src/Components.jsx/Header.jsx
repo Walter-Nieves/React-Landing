@@ -51,16 +51,17 @@ function Header() {
 
   // Función que devuelve las clases CSS de cada lista <ul> dependiendo de su nivel (depth).
   const getUlClasses = (depth) => {
+    
     switch (depth) {
       // Menú principal (nivel 0)
       case 0:
-        return " absolute left-0 top-full hidden group-hover/a:block rounded-md shadow-lg z-50";
+        return "bg-gray-300 absolute left-0   top-full hidden group-hover/a:block rounded-md shadow-lg z-50";
       // Submenú de primer nivel (nivel 1)
       case 1:
-        return " absolute right-full top-0 hidden group-hover/b:block rounded-md shadow-lg z-50 flex justify-center items-center";
+        return "bg-gray-300 absolute right-full top-0 hidden group-hover/b:block rounded-md shadow-lg z-50 flex justify-center items-center";
       // Submenús más profundos (nivel 2+)
       default:
-        return " absolute right-full top-0 hidden group-hover/c:block rounded-md shadow-lg z-50";
+        return "bg-red-300 p-5 absolute right-full top-0 hidden group-hover/c:block rounded-md shadow-lg z-50";
     }
   };
 
