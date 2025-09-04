@@ -100,13 +100,13 @@ function Contacto() {
           {datos.contacto.titulo}
         </h2>
 
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo1}
         </p>
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo2}
         </p>
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo3}
         </p>
         <form
@@ -665,13 +665,13 @@ function Contacto() {
             </p>
           </button>
         </form>
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo4}
         </p>
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo5}
         </p>
-        <p className="text-justify text-3xl w-[80%] my-10 justify-center max-md:text-5xl">
+        <p className="text-justify text-3xl w-[80%] my-10 justify-center ">
           {datos.contacto.parrafo6}
         </p>
       </div>

@@ -52,7 +52,7 @@ function Destino() {
       {!lugarSlug && (
         <div className="w-[100%] h-full bg-gray-300 flex flex-col justify-center items-center">
           <h2  className=" text-7xl text-center mb-20 mt-28  text-green-500">{region.titulo}</h2>
-          <p className="text-3xl w-[84%] my-10 text-justify justify-center max-md:text-5xl">{region.parrafo1}</p>
+          <p className="text-3xl w-[84%] my-10 text-justify justify-center">{region.parrafo1}</p>
 
           <img
             className="object-contain w-[84%] rounded-xl"
@@ -63,13 +63,13 @@ function Destino() {
           {/* Bloque de texto: elige parrafos del lugar si existe; si no, los de la región */}
           <div className="w-[84%]">
             
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo2}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo3}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo4}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo5}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo6}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo7}</p>
-            <p className="text-3xl my-10 text-justify justify-center max-md:text-5xl">{region.parrafo8}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo2}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo3}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo4}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo5}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo6}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo7}</p>
+            <p className="text-3xl my-10 text-justify justify-center ">{region.parrafo8}</p>
           </div>
         </div>
       )}
@@ -85,13 +85,13 @@ function Destino() {
                 src={lugar.imagen}
                 alt={lugar.titulo}
               />
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo1}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo2}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo3}
               </p>
 
@@ -100,19 +100,19 @@ function Destino() {
                 src={lugar.imagen2}
                 alt={lugar.titulo}
               />
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo4}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo5}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo6}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo7}
               </p>
-              <p  className="text-3xl text-justify w-[63%] my-10 justify-center max-md:text-5xl">
+              <p  className="text-3xl text-justify w-[63%] my-10 justify-center">
                 {lugar.parrafo8}
               </p>
 

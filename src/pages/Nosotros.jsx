@@ -18,17 +18,17 @@ function Nosotros() {
             <strong className="text-[5rem] my-20 text-center max-md:text-7xl ">
               {info.titulo}
             </strong>
-            <span className=" text-6xl text-center mb-24 w-[50%]  text-green-500">
+            <span className=" text-5xl text-center mb-24 w-[50%]  text-green-500">
               {info.subtitulo}
             </span>
             <img
               className="object-contain w-[84%] rounded-xl"
               src={info.imagen}
             />
-            <p className="text-justify   text-3xl mt-10 w-[84%] justify-center max-md:text-4xl ">
+            <p className="text-justify   text-3xl mt-10 w-[84%] justify-center">
               {info.parrafo1}
             </p>
-            <p className="text-justify   text-3xl mt-10 w-[84%] justify-center max-md:text-4xl ">
+            <p className="text-justify   text-3xl mt-10 w-[84%] justify-center">
               {info.parrafo2}
             </p>
           </div>
@@ -51,7 +51,7 @@ function Nosotros() {
             <span className="text-5xl text-center font-extrabold max-md:text-5xl">
               {item.titulo}
             </span>
-            <p className="text-justify text-3xl mt-5  max-md:text-4xl">
+            <p className="text-justify text-3xl mt-5">
               {item.texto}
             </p>
           </div>
@@ -93,13 +93,13 @@ function Nosotros() {
             key={index}
             className="bg-gray-300 w-[84%] flex flex-col justify-center items-center"
           >
-            <p className="text-justify text-3xl mt-5 justify-center max-md:text-5xl">
+            <p className="text-justify text-3xl mt-5 justify-center">
               {info.parrafo3}
             </p>
-            <span className="mt-8 text-6xl text-center  text-green-500">
+            <span className="mt-8 text-5xl text-center  text-green-500">
               {info.subtitulo2}
             </span>
-            <p className="text-justify text-3xl mt-5 justify-center max-md:text-5xl ">
+            <p className="text-justify text-3xl mt-5 justify-center">
               {info.parrafo4}
             </p>
           </div>
@@ -150,10 +150,10 @@ function Nosotros() {
 
         {datos.nosotros.map((info, index) => (
           <div key={index} className="bg-gray-300 flex flex-col w-[84%]">
-            <span className="mt-8 text-6xl text-center  text-green-500">
+            <span className="mt-8 text-5xl text-center  text-green-500">
               {info.subtitulo3}
             </span>
-            <p className="text-justify text-3xl mt-10 pb-2 justify-center max-md:text-5xl">
+            <p className="text-justify text-3xl mt-10 pb-2 justify-center">
               {info.parrafo5}
             </p>
           </div>
@@ -171,7 +171,7 @@ function Nosotros() {
               />
             </div>
             <span className="text-3xl font-extrabold max-md:text-5xl">{info.titulo}</span>
-            <p className="text-justify text-3xl mt-5  max-md:text-5xl">{info.parrafo}</p>
+            <p className="text-justify text-3xl mt-5">{info.parrafo}</p>
           </div>
         ))}
 

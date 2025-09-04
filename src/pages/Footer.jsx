@@ -73,8 +73,8 @@ function Footer() {
         </div>
         <br />
         {datos.fotterTexto.map((info, index) => (
-          <div key={index}>
-            <span className="text-white mr-4 max-md:text-4xl">
+          <div key={index} className="flex">
+            <span className="text-white mr-4 max-md:text-3xl max-md:text-center">
               {info.texto8}
             </span>
           </div>

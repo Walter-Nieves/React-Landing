@@ -171,7 +171,7 @@ const datos = {
       icono: "/React-Landing/icons/headset.svg",
       titulo: "Tecnología",
       parrafo:
-        "Contamos con herramientas tecnológicas que nos permiten brindarte un servicio óptimo.",
+        "Contamos con herramientas tecnológicas que nos permiten brindarte un servicio óptimo las 24 horas del dia todos los dias.",
     },
     {
       icono: "/React-Landing/icons/person-check-fill.svg",
